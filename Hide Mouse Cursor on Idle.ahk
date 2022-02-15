@@ -36,7 +36,11 @@ return
 
 ; Hides the mouse cursor
 Hoty:
-   SystemCursor("Off")
+    GetKeyState, CtrlState, Ctrl
+    GetKeyState, LWinState, LWin
+    GetKeyState, AltState, Alt
+    if (CtrlState != "D" && LWinState != "D" && AltState != "D")
+        SystemCursor("Off")
 return
 
 ; Ensure the cursor is made visible when the script exits.
